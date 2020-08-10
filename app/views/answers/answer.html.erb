@@ -1,0 +1,20 @@
+<form action="answer">
+  <input type="text" name="question">
+  <input type="submit" value="Ask!" >
+</form>
+
+<div class="container">
+  <p id= "answer" >You : <%= @answer %></p>
+  <% if @answer == "i am going to work right now!" %>
+    <%= @great %>
+  <% elsif @answer == "" %>
+    <%= @saySomething %>
+  <% elsif @answer.end_with?("?") %>
+    <%= @sillyQuestion %>
+  <% else %>
+    <%= @getDressed %>
+  <% end  %>
+  <p><%= link_to "Another question?", ask_path %> </p>
+</div>
+
+
